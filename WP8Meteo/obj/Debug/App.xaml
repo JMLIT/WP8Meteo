@@ -1,0 +1,21 @@
+﻿<Application
+    x:Class="WP8Meteo.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WP8Meteo">
+    <Application.Resources>
+        <local:TemperatureConverter x:Key="TemperatureConverter" />
+        <local:HumidityConverter x:Key="HumidityConverter" />
+        <local:PressureConverter x:Key="PressureConverter" />
+        <local:BarometerConverter x:Key="BarometerConverter" />
+        <local:BarometerNameConverter x:Key="BarometerNameConverter" />
+        <local:BluetoothColorConverter x:Key="BluetoothColorConverter" />
+
+        <Style x:Key="BluetoothStyle" TargetType="Path">
+            <Setter Property="Stretch" Value="Uniform" />
+            <Setter Property="Fill" Value="White" />
+            <Setter Property="Data" Value="M25.190001,36.358002L30.773923,42.067493 25.190001,47.652996z M25.190001,14.77L30.773923,20.477003 25.190001,26.060007z M20.969544,4.4679947L20.969544,26.05999 11.849735,16.937996 8.5597628,20.226997 19.729581,31.398994 8.4998272,42.627998 11.789677,45.919991 20.969544,36.732994 20.969544,58.450996 37.169169,42.256996 26.1794,31.271996 37.099223,20.355003z M21.939496,0L23.329482,0C33.49932,0.1989975 38.719184,3.5999985 42.069094,9.9309921 45.419001,16.256996 48.019046,34.25399 44.42903,46.786995 40.829127,59.321999 33.749316,62.424004 22.829493,62.667L21.259578,62.667C11.329726,62.456001 5.789799,57.937996 2.6099318,50.383003 0.92991216,46.408989 0.17992733,41.251991 0,35.611L0,29.40699C0.099972901,25.635994 0.39000608,21.771996 0.73997523,17.995995 1.8199088,6.6449966 10.029825,0.24099731 21.939496,0z"/>
+        </Style>
+    </Application.Resources>
+</Application>
+

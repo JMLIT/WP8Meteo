@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="WP8Meteo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WP8Meteo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Temps d'ici..." FontSize="36"                    HorizontalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5"  >
+            <TextBlock Text="Tempér.   :  " FontSize="28" VerticalAlignment="Bottom"/>
+            <TextBlock Text="{Binding TemperatureSensor.CurrentTemperature, Converter={StaticResource TemperatureConverter}}"  FontSize="36" VerticalAlignment="Bottom"/>
+            <TextBlock Text=" °C" FontSize="28" VerticalAlignment="Bottom" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5"  >
+            <TextBlock Text="Humidité : " FontSize="28" VerticalAlignment="Bottom"/>
+            <TextBlock Text="{Binding HumiditySensor.CurrentHumidity, Converter={StaticResource HumidityConverter}}"  FontSize="36" VerticalAlignment="Bottom"/>
+            <TextBlock Text=" %" FontSize="28" VerticalAlignment="Bottom"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="5"  >
+            <TextBlock Text="Pression  : " FontSize="28" VerticalAlignment="Bottom"/>
+            <TextBlock Text="{Binding BarometerSensor.CurrentPressure, Converter={StaticResource PressureConverter}}"  FontSize="36" VerticalAlignment="Bottom"/>
+            <TextBlock Text=" hPa" FontSize="28" VerticalAlignment="Bottom"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Margin="25" Orientation="Horizontal">
+            <TextBlock Text="Le temps est  " FontSize="24" VerticalAlignment="Bottom"/>
+            <TextBlock Text="{Binding BarometerSensor.CurrentPressure, Converter={StaticResource BarometerNameConverter}}" 
+                        FontSize="28" VerticalAlignment="Bottom"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Margin="10" >
+            <Button Content="Connecter capteur" Click="Button_Click_1"  x:Name="Button_Click" HorizontalAlignment="Center"/>
+            
+        </StackPanel>
+     </Grid>
+</Page>
